@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notas — Ulife</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/notas.css">
+  <link rel="icon" type="image/png" href="image/ulifeicon.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <aside class="sidebar">
+      <div class="logo">
+        <a href="index.html">
+          <h1>U<span>life</span></h1>
+        </a>
+      </div>
+
+      <nav>
+        <ul>
+          <li onclick="window.location.href='index.html'">
+            <i class="fa-solid fa-house"></i>
+            <span>Início</span>
+          </li>
+
+          <li class="active">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>Acadêmico</span>
+          </li>
+
+          <li onclick="window.location.href='financeiro.html'">
+            <i class="fa-solid fa-wallet"></i>
+            <span>Financeiro</span>
+          </li>
+
+          <li>
+            <i class="fa-solid fa-calendar-days"></i>
+            <span>Atividades</span>
+          </li>
+
+          <li>
+            <i class="fa-solid fa-book-open"></i>
+            <span>Biblioteca</span>
+          </li>
+
+          <li>
+            <i class="fa-solid fa-table-cells"></i>
+            <span>Serviços</span>
+          </li>
+
+          <li>
+            <i class="fa-solid fa-headset"></i>
+            <span>Suporte</span>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="logout">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        <span>Sair</span>
+      </div>
+    </aside>
+
+    <main>
+
+      <header>
+        <div class="menu">
+          <i id="menu-btn" class="fa-solid fa-bars"></i>
+        </div>
+
+        <div class="icons">
+          <i class="fa-regular fa-bell"></i>
+
+          <div class="perfil-container">
+            <div class="perfil-btn">
+              <i class="fa-regular fa-user"></i>
+            </div>
+
+            <div class="perfil-menu">
+              <div class="perfil-topo">
+                <div class="foto">
+                  <i class="fa-solid fa-user"></i>
+                </div>
+                <h3>João</h3>
+                <small>Sem foto de perfil</small>
+              </div>
+
+              <ul>
+                <li><i class="fa-regular fa-address-card"></i> Meus dados</li>
+                <li><i class="fa-regular fa-folder"></i> Meus documentos</li>
+                <li><i class="fa-solid fa-wallet"></i> Meus pagamentos</li>
+                <li><i class="fa-solid fa-graduation-cap"></i> Políticas de bolsas</li>
+                <li><i class="fa-regular fa-bell"></i> Configurar notificações</li>
+                <li><i class="fa-regular fa-circle-question"></i> Ajuda</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="tema-btn" id="tema-btn">
+            <i class="fa-solid fa-moon" id="tema-icon"></i>
+          </div>
+        </div>
+      </header>
+
+      <section class="page-header">
+        <div>
+          <h1>Notas</h1>
+          <p>Semestre 1 — 2026 · Análise e Desenvolvimento de Sistemas</p>
+        </div>
+      </section>
+
+      <section class="notas-filtros">
+
+        <div class="filtro-grupo">
+          <label for="periodo-letivo">
+            <i class="fa-regular fa-calendar"></i>
+            Período letivo
+          </label>
+          <div class="select-wrapper" id="wrapper-periodo">
+            <div class="select-display" id="display-periodo" role="button" aria-haspopup="listbox" aria-expanded="false" tabindex="0">
+              <span id="label-periodo">2026/1</span>
+              <i class="fa-solid fa-chevron-down select-arrow"></i>
+            </div>
+            <ul class="select-options" id="options-periodo" role="listbox">
+              <li class="select-option selected" data-value="2026/1" role="option" aria-selected="true">2026/1</li>
+              <li class="select-option" data-value="2025/2" role="option" aria-selected="false">2025/2</li>
+              <li class="select-option" data-value="2025/1" role="option" aria-selected="false">2025/1</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="filtro-divisor">
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+
+        <div class="filtro-grupo filtro-disciplina">
+          <label for="disciplina">
+            <i class="fa-solid fa-book-open"></i>
+            Disciplina
+          </label>
+          <div class="select-wrapper" id="wrapper-disciplina">
+            <div class="select-display" id="display-disciplina" role="button" aria-haspopup="listbox" aria-expanded="false" tabindex="0">
+              <span id="label-disciplina">Escolha uma disciplina</span>
+              <i class="fa-solid fa-chevron-down select-arrow"></i>
+            </div>
+            <ul class="select-options" id="options-disciplina" role="listbox">
+              <li class="select-option placeholder" data-value="" role="option">Escolha uma disciplina</li>
+              <li class="select-option" data-value="algoritmos-1" data-color="purple" role="option">
+                <span class="disc-dot" style="background:#7c3aed;"></span>
+                Algoritmos e Programação — MCA1
+              </li>
+              <li class="select-option" data-value="algoritmos-2" data-color="blue" role="option">
+                <span class="disc-dot" style="background:#2563eb;"></span>
+                Algoritmos e Programação — MCA2
+              </li>
+              <li class="select-option" data-value="ihc-1" data-color="pink" role="option">
+                <span class="disc-dot" style="background:#9b4388;"></span>
+                Interação Humano Computador e UX — MCA1
+              </li>
+              <li class="select-option" data-value="ihc-2" data-color="pink" role="option">
+                <span class="disc-dot" style="background:#9b4388;"></span>
+                Interação Humano Computador e UX — MCA2
+              </li>
+              <li class="select-option" data-value="futuros-1" data-color="teal" role="option">
+                <span class="disc-dot" style="background:#0f6e56;"></span>
+                Academia de Futuros Profissionais — MCA1
+              </li>
+              <li class="select-option" data-value="futuros-2" data-color="teal" role="option">
+                <span class="disc-dot" style="background:#0f6e56;"></span>
+                Academia de Futuros Profissionais — MCA2
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </section>
+
+      <div class="notas-vazio" id="estado-vazio">
+        <div class="vazio-icone">
+          <i class="fa-solid fa-chart-bar"></i>
+        </div>
+        <h2>Selecione uma disciplina</h2>
+        <p>Escolha o período letivo e a disciplina acima para visualizar suas notas e informações.</p>
+      </div>
+
+      <div class="notas-conteudo" id="notas-conteudo" hidden>
+
+        <section class="notas-resumo" id="notas-resumo">
+
+          <div class="resumo-card card-roxo">
+            <div class="resumo-icone">
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div>
+              <small>Nota total</small>
+              <h2 id="resumo-nota-total">43,00</h2>
+              <span id="resumo-situacao-badge">A divulgar</span>
+            </div>
+          </div>
+
+          <div class="resumo-card card-laranja">
+            <div class="resumo-icone">
+              <i class="fa-regular fa-calendar-xmark"></i>
+            </div>
+            <div>
+              <small>Faltas</small>
+              <h2 id="resumo-faltas">0</h2>
+              <span>de 25% permitidas</span>
+            </div>
+          </div>
+
+          <div class="resumo-card card-verde">
+            <div class="resumo-icone">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <div>
+              <small>Situação</small>
+              <h2 id="resumo-situacao">A divulgar</h2>
+              <span>Resultado parcial</span>
+            </div>
+          </div>
+
+          <div class="resumo-card card-azul">
+            <div class="resumo-icone">
+              <i class="fa-solid fa-percent"></i>
+            </div>
+            <div>
+              <small>Aproveitamento</small>
+              <h2 id="resumo-pct">43%</h2>
+              <span>Mínimo: 70 pts</span>
+            </div>
+          </div>
+
+        </section>
+
+        <div class="notas-grid">
+
+          <div class="notas-box">
+            <div class="notas-box-titulo">
+              <div class="notas-disc-header" id="disc-header">
+                <div class="notas-disc-icon purple" id="disc-icon">
+                  <i class="fa-solid fa-code"></i>
+                </div>
+                <div>
+                  <h2 id="disc-nome">Algoritmos e Programação</h2>
+                  <small id="disc-codigo">ADS1AN-MCA1-70509055 · Prática presencial</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="notas-ementa">
+              <p class="ementa-label"><i class="fa-solid fa-align-left"></i> Ementa</p>
+              <p class="ementa-texto" id="disc-ementa">
+                Lógica, algoritmos e fluxograma. Estrutura sequencial. Estruturas de programação: condicional.
+                Estruturas de programação: repetitiva. Variáveis indexadas. Subrotinas: procedimento e funções.
+                Programação aplicada à resolução de problemas reais. Integração entre ciência, tecnologia e problemas sociais.
+              </p>
+            </div>
+
+            <div class="notas-obs">
+              <div class="obs-item">
+                <i class="fa-solid fa-circle-info"></i>
+                <p>Resultado parcial, sujeito a alterações.</p>
+              </div>
+              <div class="obs-item">
+                <i class="fa-solid fa-clipboard-list"></i>
+                <p>Plano de Avaliação: A1 (30pts) · AIT 30pts (Extra) · A3 (40pts) · A2 (30pts)</p>
+              </div>
+              <div class="obs-item">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <p>Exigência mínima: 70 pontos e 75% de frequência</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="notas-box notas-box-tabela">
+            <div class="notas-box-titulo">
+              <h2><i class="fa-solid fa-table-list"></i> Detalhamento das notas</h2>
+            </div>
+
+            <div class="tabela-wrapper">
+              <table class="notas-tabela" id="tabela-notas">
+                <thead>
+                  <tr>
+                    <th>Carga horária</th>
+                    <th>Avaliação</th>
+                    <th>Data</th>
+                    <th>Valor</th>
+                    <th>Nota</th>
+                    <th>%</th>
+                  </tr>
+                </thead>
+                <tbody id="tabela-corpo">
+                  <tr>
+                    <td>Prática (presencial)</td>
+                    <td>Atividade Avaliativa 1</td>
+                    <td>06/07/2026</td>
+                    <td>30,00</td>
+                    <td class="nota-valor">15,30</td>
+                    <td><span class="pct-badge pct-amarelo">51%</span></td>
+                  </tr>
+                  <tr>
+                    <td>Prática (presencial)</td>
+                    <td>Atividade Avaliativa 2</td>
+                    <td>06/07/2026</td>
+                    <td>30,00</td>
+                    <td class="nota-valor">27,50</td>
+                    <td><span class="pct-badge pct-verde">92%</span></td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr class="linha-total">
+                    <td colspan="3"><strong>TOTAL</strong></td>
+                    <td><strong></strong></td>
+                    <td class="nota-valor"><strong id="total-nota">43,00</strong></td>
+                    <td><span class="pct-badge pct-amarelo" id="total-pct">43%</span></td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <footer>© 2026 Portal Acadêmico.</footer>
+
+    </main>
+  </div>
+
+  <script>
+
+    const menu = document.querySelector("#menu-btn");
+    const sidebar = document.querySelector(".sidebar");
+    menu.onclick = () => sidebar.classList.toggle("close");
+  </script>
+
+  <script>
+
+    const perfilBtn = document.querySelector(".perfil-btn");
+    const perfilMenu = document.querySelector(".perfil-menu");
+    perfilBtn.addEventListener("click", e => { perfilMenu.classList.toggle("active"); e.stopPropagation(); });
+    perfilMenu.addEventListener("click", e => e.stopPropagation());
+    document.addEventListener("click", () => perfilMenu.classList.remove("active"));
+  </script>
+
+  <script>
+
+    const temaBtn = document.getElementById("tema-btn");
+    const temaIcon = document.getElementById("tema-icon");
+    if (localStorage.getItem("tema") === "dark") {
+      document.body.classList.add("dark-mode");
+      temaIcon.classList.replace("fa-moon", "fa-sun");
+    }
+    temaBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      if (document.body.classList.contains("dark-mode")) {
+        temaIcon.classList.replace("fa-moon", "fa-sun");
+        localStorage.setItem("tema", "dark");
+      } else {
+        temaIcon.classList.replace("fa-sun", "fa-moon");
+        localStorage.setItem("tema", "light");
+      }
+    });
+  </script>
+
+  <script>
+   
+    function setupCustomSelect(wrapperId, displayId, optionsId, labelId, onChange) {
+      const wrapper = document.getElementById(wrapperId);
+      const display = document.getElementById(displayId);
+      const optionsList = document.getElementById(optionsId);
+      const label = document.getElementById(labelId);
+
+      function openSelect() {
+
+        document.querySelectorAll('.select-wrapper.open').forEach(el => {
+          if (el !== wrapper) closeSelect(el);
+        });
+        wrapper.classList.add('open');
+        display.setAttribute('aria-expanded', 'true');
+      }
+
+      function closeThisSelect() {
+        wrapper.classList.remove('open');
+        display.setAttribute('aria-expanded', 'false');
+      }
+
+      display.addEventListener("click", e => {
+        e.stopPropagation();
+        if (wrapper.classList.contains('open')) {
+          closeThisSelect();
+        } else {
+          openSelect();
+        }
+      });
+
+      display.addEventListener("keydown", e => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          if (wrapper.classList.contains('open')) {
+            closeThisSelect();
+          } else {
+            openSelect();
+          }
+        }
+        if (e.key === "Escape") closeThisSelect();
+      });
+
+      optionsList.querySelectorAll(".select-option:not(.placeholder)").forEach(option => {
+        option.addEventListener("click", e => {
+          e.stopPropagation();
+
+          optionsList.querySelectorAll(".select-option").forEach(o => {
+            o.classList.remove("selected");
+            o.setAttribute("aria-selected", "false");
+          });
+          option.classList.add("selected");
+          option.setAttribute("aria-selected", "true");
+          label.textContent = option.textContent.trim();
+          closeThisSelect();
+          if (onChange) onChange(option.dataset.value, option);
+        });
+      });
+
+      document.addEventListener("click", () => closeThisSelect());
+
+      optionsList.addEventListener("click", e => e.stopPropagation());
+    }
+
+    const disciplinaData = {
+      "algoritmos-1": {
+        nome: "Algoritmos e Programação",
+        codigo: "ADS1AN-MCA1-70509055 · Prática presencial",
+        iconeClass: "fa-solid fa-code",
+        iconeCor: "purple",
+        ementa: "Lógica, algoritmos e fluxograma. Estrutura sequencial. Estruturas de programação: condicional. Estruturas de programação: repetitiva. Variáveis indexadas. Subrotinas: procedimento e funções. Programação aplicada à resolução de problemas reais. Integração entre ciência, tecnologia e problemas sociais.",
+        notaTotal: "43,00",
+        faltas: "0",
+        situacao: "A divulgar",
+        pct: "43%",
+        linhas: [
+          { carga: "Prática (presencial)", avaliacao: "Atividade Avaliativa 1", data: "06/07/2026", valor: "30,00", nota: "15,30", pct: "51%", cor: "amarelo" },
+          { carga: "Prática (presencial)", avaliacao: "Atividade Avaliativa 2", data: "06/07/2026", valor: "30,00", nota: "27,50", pct: "92%", cor: "verde" },
+        ],
+        totalNota: "43,00",
+        totalPct: "43%",
+        totalPctCor: "amarelo"
+      },
+      "algoritmos-2": {
+        nome: "Algoritmos e Programação",
+        codigo: "ADS1AN-MCA2-70509056 · Prática presencial",
+        iconeClass: "fa-solid fa-code",
+        iconeCor: "blue",
+        ementa: "Lógica, algoritmos e fluxograma. Estrutura sequencial. Estruturas de programação: condicional. Estruturas de programação: repetitiva. Variáveis indexadas. Subrotinas: procedimento e funções. Programação aplicada à resolução de problemas reais. Integração entre ciência, tecnologia e problemas sociais.",
+        notaTotal: "28,50",
+        faltas: "2",
+        situacao: "A divulgar",
+        pct: "29%",
+        linhas: [
+          { carga: "Prática (presencial)", avaliacao: "Atividade Avaliativa 1", data: "06/07/2026", valor: "30,00", nota: "13,00", pct: "43%", cor: "vermelho" },
+          { carga: "Prática (presencial)", avaliacao: "Atividade Avaliativa 2", data: "06/07/2026", valor: "30,00", nota: "15,50", pct: "52%", cor: "amarelo" },
+        ],
+        totalNota: "28,50",
+        totalPct: "29%",
+        totalPctCor: "vermelho"
+      },
+      "ihc-1": {
+        nome: "Interação Humano Computador e UX",
+        codigo: "ADS1AN-MCA1-77689904 · Prática presencial",
+        iconeClass: "fa-solid fa-users",
+        iconeCor: "pink",
+        ementa: "Design centrado no usuário. Princípios e diretrizes de usabilidade. Heurísticas de Nielsen. Prototipagem e wireframing. Avaliação de interfaces. Design de interação. Acessibilidade digital. Testes com usuários.",
+        notaTotal: "9,20",
+        faltas: "0",
+        situacao: "A divulgar",
+        pct: "92%",
+        linhas: [
+          { carga: "Prática (presencial)", avaliacao: "Projeto A3 — IHC", data: "06/07/2026", valor: "10,00", nota: "9,20", pct: "92%", cor: "verde" },
+        ],
+        totalNota: "9,20",
+        totalPct: "92%",
+        totalPctCor: "verde"
+      },
+      "ihc-2": {
+        nome: "Interação Humano Computador e UX",
+        codigo: "ADS1AN-MCA2-77689905 · Prática presencial",
+        iconeClass: "fa-solid fa-users",
+        iconeCor: "pink",
+        ementa: "Design centrado no usuário. Princípios e diretrizes de usabilidade. Heurísticas de Nielsen. Prototipagem e wireframing. Avaliação de interfaces. Design de interação. Acessibilidade digital. Testes com usuários.",
+        notaTotal: "8,80",
+        faltas: "1",
+        situacao: "A divulgar",
+        pct: "88%",
+        linhas: [
+          { carga: "Prática (presencial)", avaliacao: "Projeto A3 — IHC", data: "06/07/2026", valor: "10,00", nota: "8,80", pct: "88%", cor: "verde" },
+        ],
+        totalNota: "8,80",
+        totalPct: "88%",
+        totalPctCor: "verde"
+      },
+      "futuros-1": {
+        nome: "Academia de Futuros Profissionais",
+        codigo: "ADS1AN-MCA1-873440 · Teórica digital",
+        iconeClass: "fa-solid fa-network-wired",
+        iconeCor: "teal",
+        ementa: "Competências para o mercado de trabalho. Soft skills e inteligência emocional. Comunicação profissional. Planejamento de carreira. Empreendedorismo e inovação. Ética profissional.",
+        notaTotal: "8,10",
+        faltas: "0",
+        situacao: "A divulgar",
+        pct: "81%",
+        linhas: [
+          { carga: "Digital", avaliacao: "Atividade Online 1", data: "01/06/2026", valor: "5,00", nota: "4,00", pct: "80%", cor: "verde" },
+          { carga: "Digital", avaliacao: "Atividade Online 2", data: "15/06/2026", valor: "5,00", nota: "4,10", pct: "82%", cor: "verde" },
+        ],
+        totalNota: "8,10",
+        totalPct: "81%",
+        totalPctCor: "verde"
+      },
+      "futuros-2": {
+        nome: "Academia de Futuros Profissionais",
+        codigo: "ADS1AN-MCA2-873441 · Teórica digital",
+        iconeClass: "fa-solid fa-network-wired",
+        iconeCor: "teal",
+        ementa: "Competências para o mercado de trabalho. Soft skills e inteligência emocional. Comunicação profissional. Planejamento de carreira. Empreendedorismo e inovação. Ética profissional.",
+        notaTotal: "7,50",
+        faltas: "0",
+        situacao: "A divulgar",
+        pct: "75%",
+        linhas: [
+          { carga: "Digital", avaliacao: "Atividade Online 1", data: "01/06/2026", valor: "5,00", nota: "3,80", pct: "76%", cor: "verde" },
+          { carga: "Digital", avaliacao: "Atividade Online 2", data: "15/06/2026", valor: "5,00", nota: "3,70", pct: "74%", cor: "amarelo" },
+        ],
+        totalNota: "7,50",
+        totalPct: "75%",
+        totalPctCor: "amarelo"
+      }
+    };
+
+    function renderDisciplina(value) {
+      const data = disciplinaData[value];
+      if (!data) return;
+
+      document.getElementById("resumo-nota-total").textContent = data.notaTotal;
+      document.getElementById("resumo-situacao-badge").textContent = data.situacao;
+      document.getElementById("resumo-faltas").textContent = data.faltas;
+      document.getElementById("resumo-situacao").textContent = data.situacao;
+      document.getElementById("resumo-pct").textContent = data.pct;
+
+      document.getElementById("disc-nome").textContent = data.nome;
+      document.getElementById("disc-codigo").textContent = data.codigo;
+      document.getElementById("disc-ementa").textContent = data.ementa;
+
+      const iconEl = document.querySelector("#disc-icon i");
+      iconEl.className = data.iconeClass;
+      const iconWrapper = document.getElementById("disc-icon");
+      iconWrapper.className = "notas-disc-icon " + data.iconeCor;
+
+      const tbody = document.getElementById("tabela-corpo");
+      tbody.innerHTML = "";
+      data.linhas.forEach(linha => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${linha.carga}</td>
+          <td>${linha.avaliacao}</td>
+          <td>${linha.data}</td>
+          <td>${linha.valor}</td>
+          <td class="nota-valor">${linha.nota}</td>
+          <td><span class="pct-badge pct-${linha.cor}">${linha.pct}</span></td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      document.getElementById("total-nota").textContent = data.totalNota;
+      document.getElementById("total-pct").textContent = data.totalPct;
+      document.getElementById("total-pct").className = `pct-badge pct-${data.totalPctCor}`;
+
+      // Mostra conteúdo e esconde estado vazio
+      document.getElementById("estado-vazio").style.display = "none";
+      document.getElementById("notas-conteudo").removeAttribute("hidden");
+    }
+
+    setupCustomSelect("wrapper-periodo", "display-periodo", "options-periodo", "label-periodo", null);
+    setupCustomSelect("wrapper-disciplina", "display-disciplina", "options-disciplina", "label-disciplina", (value) => {
+      if (value) renderDisciplina(value);
+    });
+  </script>
+
+</body>
+
+</html>
